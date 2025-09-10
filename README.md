@@ -1,2 +1,2 @@
 # ASR-252
-Repositório da discinplina de Gestão de Serviços de Rede
+Repositório da disciplina de Gestão de Serviços de Rede
