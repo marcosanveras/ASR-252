@@ -1,0 +1,59 @@
+
+marcosveras@fedora:~$ ssh-keygen -t rsa -b 4096 -C "marcos.veras07@aluno.ifce.edu.br"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/marcosveras/.ssh/id_rsa):           
+/home/marcosveras/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase for "/home/marcosveras/.ssh/id_rsa" (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/marcosveras/.ssh/id_rsa
+Your public key has been saved in /home/marcosveras/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:P3gDpqYKJlWvGoNpWHOiqKTu6EzNswBdUmjUfK/F2Qo marcos.veras07@aluno.ifce.edu.br
+The key's randomart image is:
++---[RSA 4096]----+
+| ..+.            |
+|  o.o .          |
+| .. o. o o       |
+| . + .E = .      |
+|. * . .+S.       |
+|+*o+ ..o.+       |
+|O*o+. o . =      |
+|@..+oo   . o     |
+|B=oo.            |
++----[SHA256]-----+
+marcosveras@fedora:~$ pwd
+/home/marcosveras
+marcosveras@fedora:~$ cd .ssh/
+marcosveras@fedora:~/.ssh$ ls -althr
+total 36K
+-rw-r--r--. 1 marcosveras marcosveras  12K Jun  9  2023 .authorized_keys.swp
+-rw-r--r--. 1 marcosveras marcosveras  802 Jun  9  2023 authorized_keys
+-rw-r--r--. 1 marcosveras marcosveras  618 Jun 24  2024 config
+drwx------. 1 marcosveras marcosveras  292 Nov  4  2024 ..
+-rw-------. 1 marcosveras marcosveras 3.1K Nov  4  2024 known_hosts.old
+-rw-------. 1 marcosveras marcosveras 3.3K Nov  4  2024 known_hosts
+drwxr-xr-x. 1 marcosveras marcosveras  166 Feb  5  2025 .
+-rw-------. 1 marcosveras marcosveras 3.4K Sep 25 20:59 id_rsa
+-rw-r--r--. 1 marcosveras marcosveras  758 Sep 25 20:59 id_rsa.pub
+marcosveras@fedora:~/.ssh$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0UaR8qh2eHzUiyPCnc13r9yslx+BaSGz72WlGc5OZAObP+GeAavpFd+4E2/ZBCTr+VGB3WMeDohBpCG/yw1W3iPD0+gLllRB7DWbEqnE2YX/FQ96Vb/eXG/G3JYeuGWPxlLNZf7nK84zUSOy3uPocETkeCW/raYikjWnNCCNGF/JmassuGX3XX1xZ2MdDVUnvWyGrutYXSkeb+IfgBLYpv47/DJWwWrxzeBYxqH73ShSb7U0gRwbUZOuCaBCkBpfLGCsJbfAOQg1beYVBWjRyKbVSLxOk3bMXamtQx+wB4SWXVYWztorRYjlMYX1xX34NwUI9nN1IWZRSLVQ6ek2vrBNaWt3dKyRjaCgoHdo/+kYBYmdlFnob7EDgjnFUppEijq2wt52Fzldgytn0LqajF5205P7f0W6LJGOStMDUSSGzdAvh+Jps/3AX3ZXj+LUD4PQxifOMENkW7ttiihfLrtwUTsThDBszJvnBV+78kkbpF8smGWTcPOZZCmAbbtfEgHSHG2pgLbOV9GFu63bAz7ay/ByG87VYyQoqv9PeZh5RiLLQRvs2KSsT8qfN2zmihFZJs1DKD02k5ryRZID9RGl5izmEEANHlVtmFIzsGDll914GZWG3bZeIqIWNwxH6PKXCATdfjRRMO8/PmKm/8MT4yTb7U4yvvyCylDvyqw== marcos.veras07@aluno.ifce.edu.br
+marcosveras@fedora:~/.ssh$ 
+marcosveras@fedora:~$ git clone git@github.com:marcosanveras/ASR-252.git
+Cloning into 'ASR-252'...
+The authenticity of host 'github.com (4.228.31.150)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (7/7), done.
+Receiving objects: 100% (7/7), done.
+remote: Total 7 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+marcosveras@fedora:~$ ls -la
+total 16
+drwx------. 1 marcosveras marcosveras 306 Sep 25 21:05 .
+drwxr-xr-x. 1 root        root         22 Jul 16  2024 ..
+drwxr-xr-x. 1 marcosveras marcosveras  46 Sep 25 21:05 ASR-252
+
