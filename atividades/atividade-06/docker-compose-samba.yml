@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  samba-server:
+    image: ubuntu:22.04
+    container_name: samba-server
+    hostname: samba-server
+    networks:
+      - samba-network
+    volumes:
+      - ./samba-share:/shared
+      - ./setup-samba-server.sh:/setup-samba-server.sh
+    ports:
+      - "139:139"   # NetBIOS
+      - "445:445"   # SMB
+    command: /bin/bash -c "chmod +x /setup-samba-server.sh && /setup-samba-server.sh && tail -f /dev/null"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  samba-client:
+    image: ubuntu:22.04
+    container_name: samba-client
+    hostname: samba-client
+    networks:
+      - samba-network
+    depends_on:
+      - samba-server
+    volumes:
+      - ./test-samba-client.sh:/test-samba-client.sh
+    command: /bin/bash -c "apt-get update && apt-get install -y samba-client cifs-utils && chmod +x /test-samba-client.sh && tail -f /dev/null"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+networks:
+  samba-network:
+    driver: bridge
