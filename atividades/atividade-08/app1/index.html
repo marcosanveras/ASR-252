@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App1 - Aplicação Backend 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 App1</h1>
+        <h2>Aplicação Backend 1</h2>
+        <div class="info">
+            <p><strong>Servidor:</strong> NGINX (Alpine)</p>
+            <p><strong>Container:</strong> app1-backend</p>
+            <p><strong>Acessado via:</strong> Proxy Reverso NGINX</p>
+            <p><strong>Rota:</strong> /app1</p>
+            <p><strong>Timestamp:</strong> <span id="time"></span></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('time').textContent = new Date().toLocaleString('pt-BR');
+    </script>
+</body>
+</html>
